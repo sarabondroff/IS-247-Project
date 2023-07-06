@@ -1,4 +1,7 @@
-public class MenuItem {
+
+import java.util.ArrayList;
+import java.util.List;
+ class MenuItem {
     private String itemName;
     private double itemPrice;
 
