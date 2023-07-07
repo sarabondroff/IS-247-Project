@@ -1,7 +1,7 @@
-public class Cafe {
-    private Menu menu;
+class Cafe<T extends MenuItem> {
+    private Menu<T> menu;
 
-    public Cafe(Menu menu) {
+    public Cafe(Menu<T> menu) {
         this.menu =menu;
 
     }

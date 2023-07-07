@@ -1,29 +1,29 @@
 
 import java.util.List;
 import java.util.ArrayList;
-class Order {
-    private List<MenuItem> items;
+class Order<T extends MenuItem>{
+    private List<T> items;
 
     public Order() {
         items = new ArrayList<>();
     }
 
-    public void addItem(MenuItem item) {
+    public void addItem(T item) {
         items.add(item);
     }
 
-    public void removeItem(MenuItem item) {
+    public void removeItem(T item) {
         items.remove(item);
 
     }
 
-    public List<MenuItem> getItems() {
+    public List<T> getItems() {
         return items;
     }
 
     public double getTotalPrice() {
         double totalPrice = 0;
-        for (MenuItem item : items) {
+        for (T item : items) {
             totalPrice += item.getPrice();
         }
         return totalPrice;
