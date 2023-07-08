@@ -3,9 +3,9 @@
 public class Main {
     public static void main(String[] args) {
 
-        MenuItem item1 = new Coffee("Coffee", 5.5);
-        MenuItem item2 = new Muffin("Muffin", 8.0);
-        MenuItem item3 = new Sandwich("Sandwich", 10.0);
+        MenuItem item1 = new Coffee("1. Coffee", 5.5);
+        MenuItem item2 = new Muffin("2. Muffin", 8.0);
+        MenuItem item3 = new Sandwich("3. Sandwich", 10.0);
 
         Menu<MenuItem> menu = new Menu<>();
         menu.addItem(item1);
@@ -16,20 +16,21 @@ public class Main {
 
         cafe.displayMenu();
 
-        Order<MenuItem> order = new Order<>();
+        Order<MenuItem> order = cafe.placeOrder();
 
-            order.addItem(item1);
-            order.addItem(item2);
 
-            boolean isOrderValid = false;
+
+
+
+            boolean isOrderValid = true;
 
             try {
-                if (!isOrderValid) {
+               if (!isOrderValid) {
                     throw new OrderException("Order is Inavlid!");
-                }
+               }
 
         } catch (OrderException e) {
-            System.out.println("Order error: " + e.getMessage());
+          System.out.println("Order error: " + e.getMessage());
         }
 
         System.out.println("\nOrder: ");
@@ -37,5 +38,6 @@ public class Main {
             System.out.println(item.getName() + " - $" + item.getPrice());
         }
         System.out.println("Total Price: $" + order.getTotalPrice());
+        System.out.println("Thank you for coming to the cafe!");
     }
 }
