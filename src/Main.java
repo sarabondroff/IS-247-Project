@@ -3,6 +3,8 @@
 public class Main {
     public static void main(String[] args) {
 
+        // array adding items to menu
+
         MenuItem item1 = new Coffee("1. Coffee", 5.5);
         MenuItem item2 = new Muffin("2. Muffin", 8.0);
         MenuItem item3 = new Sandwich("3. Sandwich", 10.0);
@@ -12,16 +14,16 @@ public class Main {
         menu.addItem(item2);
         menu.addItem(item3);
 
+        // creating the cafe
+
         Cafe<MenuItem> cafe = new Cafe(menu);
 
+        // calling display menu and placeorder
         cafe.displayMenu();
 
         Order<MenuItem> order = cafe.placeOrder();
 
-
-
-
-
+// exception test
             boolean isOrderValid = true;
 
             try {
@@ -32,6 +34,8 @@ public class Main {
         } catch (OrderException e) {
           System.out.println("Order error: " + e.getMessage());
         }
+
+            // printing the order items and total price
 
         System.out.println("\nOrder: ");
         for(MenuItem item : order.getItems()) {

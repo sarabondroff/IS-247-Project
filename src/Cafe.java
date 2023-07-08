@@ -7,6 +7,7 @@ class Cafe<T extends MenuItem> {
 
     }
 
+    // method to display the menu
     public void displayMenu() {
         System.out.println("⋆ ˚｡⋆୨୧˚Welcome to the Cafe!⋆ ˚｡⋆୨୧˚");
         System.out.println("Menu: ");
@@ -15,12 +16,14 @@ class Cafe<T extends MenuItem> {
         }
     }
 
+    // scanner method allowing user to place an order
     public Order <T> placeOrder() {
         Scanner scanner = new Scanner(System.in);
         Order <T> order = new Order<>();
 
         System.out.println("Enter the item number to add to your order. Press 0 to finish ordering.");
 
+        // adding items to user's order
         int itemNumber;
         do {
             itemNumber = scanner.nextInt();
@@ -28,7 +31,7 @@ class Cafe<T extends MenuItem> {
                 T selectedItem = menu.getItems().get(itemNumber - 1);
                 order.addItem(selectedItem);
                 System.out.println("Added " + selectedItem.getName() + " to your order.");
-
+// finishing order when 0 is pressed
             } else if (itemNumber != 0 ){
                 System.out.println("Invalid item number. Try again");
             }

@@ -21,7 +21,7 @@ class Order<T extends MenuItem>{
     public List<T> getItems() {
         return items;
     }
-
+    // total price method
     public double getTotalPrice() {
         double totalPrice = 0;
         for (T item : items) {

@@ -1,5 +1,7 @@
 import java.util.List;
 import java.util.ArrayList;
+
+// generic menu
 class Menu <T extends MenuItem> {
     private List<T> items;
 
